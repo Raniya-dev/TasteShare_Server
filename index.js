@@ -17,12 +17,22 @@ import cloudinary from "./config/cloudinary.js";
 const app = express()
 ConnectDB()
 
+
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://taste-share-frontend.vercel.app",
+      "https://taste-share-frontend-git-main-raniyanaser77-2677s-projects.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
 // ✅ CORS (ONLY ONCE, BEFORE ROUTES)
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}))
+
 
 app.use(express.urlencoded({extended:true}))
 

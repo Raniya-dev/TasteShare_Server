@@ -26,9 +26,12 @@ const ingredientSchema = new mongoose.Schema({
 
 
 const recipeSchema = new mongoose.Schema({
-        mealId:{
-        type:String,
-        unique:true
+    mealId: {
+    type: String,
+    unique: true,
+    sparse: true,
+    default: undefined
+
     },
     category:{
         type:String

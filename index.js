@@ -21,17 +21,13 @@ ConnectDB()
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://taste-share-frontend.vercel.app",
-      "https://taste-share-frontend-git-main-raniyanaser77-2677s-projects.vercel.app"
-    ],
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
 );
 
-// ✅ CORS (ONLY ONCE, BEFORE ROUTES)
+
 
 
 app.use(express.urlencoded({extended:true}))
@@ -60,38 +56,6 @@ app.use(
 
 app.use(cookieParser())
 
-// const transporter = nodemailer.createTransport({
-//   service:'gmail',
-//   host:'smtp.gmail.com',
-//   port:587,
-//   secure:false,
-//   auth:{
-//     user:process.env.EMAIL,
-//     pass:process.env.PASSWORD
-//   }
-// })
-
-// const mailOptions = {
-//   from:process.env.EMAIL,
-//   to:process.env.EMAIL,
-//   subject:'Test Email from Node.js',
-//   text:'this is a test email sent from the recipe finder backend'
-// }
-
-// app.get("/sendemail", async (req, res) => {
-//   try {
-//     const info = await transporter.sendMail({
-//       from: process.env.EMAIL,
-//       to: process.env.EMAIL,
-//       subject: "Welcome to Recipe Finder",
-//       text: "Welcome to Recipe Finder!"
-//     });
-
-//     res.json({ message: "Email sent", info });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
 
 
 const PORT = process.env.PORT || 5001

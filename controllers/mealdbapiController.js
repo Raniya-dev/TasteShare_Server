@@ -62,7 +62,7 @@ export const storeMeals = async (req, res) => {
         : [];
 
       const newRecipe = new recipeModel({
-        mealdbId: meal.idMeal,
+        mealId: meal.idMeal,
         title: meal.strMeal,
         description: ` Treat yourself to this delightful ${meal.strCategory.toLowerCase()} recipe.A simple,flovourful dish made to enjoy anytime. `,
         ingredients,

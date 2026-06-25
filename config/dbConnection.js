@@ -5,7 +5,7 @@ configDotenv()
 
 const ConnectDB = async ()=>{
     try {
-        await mongoose.connect(process.env.CONNECTION_DB)
+        await mongoose.connect(process.env.CONNECTION_ATLAS_DB)
         console.log("DB connected!");
         console.log("hi");
         

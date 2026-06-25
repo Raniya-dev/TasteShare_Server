@@ -29,7 +29,7 @@ export const storeMeals = async (req, res) => {
 
     for (const meal of allMeals) {
       const exists = await recipeModel.findOne({
-        mealdbId: meal.idMeal,
+        mealId: meal.idMeal,
       });
 
       if (exists) {
